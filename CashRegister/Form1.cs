@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace CashRegister
 {
@@ -85,7 +86,11 @@ namespace CashRegister
         private void printButton_Click(object sender, EventArgs e)
         {
             newOrderButton.Enabled = true;
-            
+
+            SoundPlayer chingPlayer = new SoundPlayer(Properties.Resources.ching);
+
+            chingPlayer.Play();
+
             receiptLabel.Text = $"                   The General Potion Merchant";
             receiptLabel.Text += $"\n\nPOTION ORDER 1";
             receiptLabel.Text += $"\nFEBRUARY 28, 2022";
@@ -116,6 +121,11 @@ namespace CashRegister
             taxOutput.Text = $"";
             totalOutput.Text = $"";
             changeOutput.Text = $"";
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashRegisterProgram));
             this.titleLabel = new System.Windows.Forms.Label();
             this.stinkLabel = new System.Windows.Forms.Label();
             this.stinkInput = new System.Windows.Forms.TextBox();
@@ -50,6 +51,7 @@
             this.printButton = new System.Windows.Forms.Button();
             this.receiptLabel = new System.Windows.Forms.Label();
             this.newOrderButton = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -172,7 +174,7 @@
             // 
             // subtotalOutput
             // 
-            this.subtotalOutput.BackColor = System.Drawing.Color.Transparent;
+            this.subtotalOutput.BackColor = System.Drawing.Color.White;
             this.subtotalOutput.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtotalOutput.Location = new System.Drawing.Point(148, 269);
             this.subtotalOutput.Name = "subtotalOutput";
@@ -181,7 +183,7 @@
             // 
             // taxOutput
             // 
-            this.taxOutput.BackColor = System.Drawing.Color.Transparent;
+            this.taxOutput.BackColor = System.Drawing.Color.White;
             this.taxOutput.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.taxOutput.Location = new System.Drawing.Point(148, 297);
             this.taxOutput.Name = "taxOutput";
@@ -190,7 +192,7 @@
             // 
             // totalOutput
             // 
-            this.totalOutput.BackColor = System.Drawing.Color.Transparent;
+            this.totalOutput.BackColor = System.Drawing.Color.White;
             this.totalOutput.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalOutput.Location = new System.Drawing.Point(148, 325);
             this.totalOutput.Name = "totalOutput";
@@ -201,7 +203,7 @@
             // 
             this.tenderedInput.Location = new System.Drawing.Point(148, 358);
             this.tenderedInput.Name = "tenderedInput";
-            this.tenderedInput.Size = new System.Drawing.Size(130, 20);
+            this.tenderedInput.Size = new System.Drawing.Size(100, 20);
             this.tenderedInput.TabIndex = 16;
             this.tenderedInput.Text = "0";
             // 
@@ -219,7 +221,7 @@
             // 
             // changeOutput
             // 
-            this.changeOutput.BackColor = System.Drawing.Color.Transparent;
+            this.changeOutput.BackColor = System.Drawing.Color.White;
             this.changeOutput.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeOutput.Location = new System.Drawing.Point(148, 454);
             this.changeOutput.Name = "changeOutput";
@@ -230,7 +232,7 @@
             // 
             this.changeLabel.AutoSize = true;
             this.changeLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeLabel.Location = new System.Drawing.Point(51, 459);
+            this.changeLabel.Location = new System.Drawing.Point(16, 459);
             this.changeLabel.Name = "changeLabel";
             this.changeLabel.Size = new System.Drawing.Size(57, 15);
             this.changeLabel.TabIndex = 19;
@@ -251,6 +253,7 @@
             // receiptLabel
             // 
             this.receiptLabel.BackColor = System.Drawing.Color.White;
+            this.receiptLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.receiptLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.receiptLabel.Location = new System.Drawing.Point(378, 65);
             this.receiptLabel.Name = "receiptLabel";
@@ -261,7 +264,7 @@
             // 
             this.newOrderButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.newOrderButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newOrderButton.Location = new System.Drawing.Point(467, 496);
+            this.newOrderButton.Location = new System.Drawing.Point(378, 496);
             this.newOrderButton.Name = "newOrderButton";
             this.newOrderButton.Size = new System.Drawing.Size(215, 35);
             this.newOrderButton.TabIndex = 22;
@@ -269,12 +272,26 @@
             this.newOrderButton.UseVisualStyleBackColor = true;
             this.newOrderButton.Click += new System.EventHandler(this.newOrderButton_Click);
             // 
+            // exitButton
+            // 
+            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.exitButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Location = new System.Drawing.Point(636, 496);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(116, 35);
+            this.exitButton.TabIndex = 23;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // CashRegisterProgram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
+            this.BackgroundImage = global::CashRegister.Properties.Resources.CashBackground;
             this.ClientSize = new System.Drawing.Size(786, 543);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.newOrderButton);
             this.Controls.Add(this.receiptLabel);
             this.Controls.Add(this.printButton);
@@ -297,6 +314,7 @@
             this.Controls.Add(this.stinkInput);
             this.Controls.Add(this.stinkLabel);
             this.Controls.Add(this.titleLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CashRegisterProgram";
             this.Text = "CashRegisterProgram";
             this.ResumeLayout(false);
@@ -328,6 +346,7 @@
         private System.Windows.Forms.Button printButton;
         private System.Windows.Forms.Label receiptLabel;
         private System.Windows.Forms.Button newOrderButton;
+        private System.Windows.Forms.Button exitButton;
     }
 }
 
